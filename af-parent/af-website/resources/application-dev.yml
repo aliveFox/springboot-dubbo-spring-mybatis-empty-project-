@@ -1,0 +1,88 @@
+server:
+  port: 7070
+spring:
+  logging:
+    config: classpath:config/log/logback.xml
+  mvc:
+    view:
+      prefix: /
+      suffix: .ftl
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout:
+      seconds: 5
+    jedis:
+      pool:
+        max-idle: 100
+        min-idle: 5
+        max-wait: 10000
+#  freemarker:
+#    enabled: true
+#    cache: false
+#    charset: UTF-8
+#    check-template-location: true
+#    content-type: text/html
+#    template-loader-path:
+#      - classpath:/templates
+#    suffix: .ftl
+#    expose-request-attributes: false
+#    expose-session-attributes: false
+#    request-context-attribute: request
+#    expose-spring-macro-helpers: true
+#    allow-request-override: false
+#    allow-session-override: false
+#    prefer-file-system-access: true
+#    settings:
+#      tag_syntax: auto_detect
+#      template_update_delay: 0
+#      default_encoding: UTF-8
+#      output_encoding: UTF-8
+#      classic_compatible: true
+#      locale: zh_CN
+#      number_format: 0.##########
+#      boolean_format: true,false
+#      datetime_format: yyyy-MM-dd HH:mm:ss
+#      date_format: yyyy-MM-dd
+#      time_format: HH:mm:ss
+#      whitespace_stripping: true
+#      template_exception_handler: ignore
+#shiro:
+#  loginUrl: /login.shtml
+#  successUrl: /
+#  ssoUrl: http://sso.xt.com
+#  unauthorizedUrl: /unauthorizedUrl.shtml
+#  cookieName: ngls_cookie
+#  reCookieName: re_ngls_cookie
+#  cipherKey: 3AvVhmFLUs0KTA3Kprsdag==
+#  interval: 1800000
+#  sessionTimeout: 1800000
+#  exclude_chain:
+#   - /readSysMsg.shtml
+#   - /getSysMsg.shtml
+#  filterChainDefinitions:
+#   - /logout.shtml = logout
+#   - /doLogin.shtml = anon
+#   - /autoGetMsg.shtml = anon
+#   - /sendEmail.shtml = anon
+#   - /validateLoginName.shtml = anon
+#   - /sendPwdEmail.shtml = anon
+#   - /resetPwd.shtml = anon
+#   - /captcha.shtml = anon
+#   - /activation.shtml  = anon
+#   - /personal/activation.shtml  = anon
+#   - /personal/securitySetup/3.shtml  = anon
+#   - /author/activation.shtml  = anon
+#   - /author/register.shtml  = anon
+#   - /author/saveregister.shtml  = anon
+#   - /author/activationEmail.shtml  = anon
+#   - /author/success.shtml  = anon
+#   - /unauthorized.shtml  = anon
+#   - /login.shtml = anon
+#   - / = anon
+#   - /validate/validateSession.shtml = anon
+#   - /js/** = anon
+#   - /css/** = anon
+#   - /fonts/** = anon
+#   - /images/** = anon

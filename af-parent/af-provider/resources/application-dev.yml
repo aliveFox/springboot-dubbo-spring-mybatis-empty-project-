@@ -1,0 +1,53 @@
+server:
+  port: 8080
+spring:
+  logging:
+    config: classpath:config/log/logback.xml
+  datasource:
+    druid:
+      url: jdbc:mysql://119.29.221.182:3306/af-fomo
+      username: devPerson
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      filters: stat,config
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 10
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      maxOpenPreparedStatements: 20
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      filter:
+        stat:
+          enabled: true
+          merge-sql: true
+          log-slow-sql: true
+          slow-sql-millis: 10000
+      web-stat-filter:
+        enabled: true
+        url-pattern: '*.shtml'
+        session-stat-enable: true
+        profile-enable: true
+      stat-view-servlet:
+         enabled: true
+         login-username: root
+         login-password: 123456
+         allow: 127.0.0.1
+         deny: 192.168.1.59
+         reset-enable: false
+         url-pattern: /druid/*
+mybatis:
+  configLocation: classpath:mybatis/mybatis-config.xml
+  mapperLocations: classpath:mybatis/mapper/*.xml
+  typeAliasesPackage: com.af.fomo.bean
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

@@ -1,0 +1,32 @@
+spring:
+  logging:
+    config: classpath:config/log/logback.xml
+  servlet:
+    multipart:
+      max-file-size: 10Mb
+  http:
+    multipart:
+      max-request-size: 100Mb
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout:
+      seconds: 5
+    lettuce:
+      pool:
+        max-idle: 100
+        max-wait: 12s
+        min-idle: 5
+    jedis:
+      pool:
+        max-idle: 100
+        min-idle: 5
+        max-wait: 10000
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+  
+  
