@@ -2,7 +2,7 @@
 
 这是一个空的项目，关于springboot+dubbo+spring+mybatis的项目
 
-#如何运行？
+# 如何运行？
 你需要的环境：
   1.redis
   2.zookeeper
